@@ -4,31 +4,26 @@ This project compares carbon estimates from Terrestrial Laser Scanning (TLS) and
 
 ## Contents
 
-├── branchorder
-│   └── combined_tree_data.csv
-├── FinalProject.Rproj
-├── GFM
-│   ├── project.html
-│   ├── project.md
+```
+
+├── GFM 
+│   ├── project.html            ## project markdown
+│   ├── project.md              ## github flavored markdown
 │   └── project_files
-│       └── figure-gfm
-│           ├── unnamed-chunk-10-1.png
-│           ├── unnamed-chunk-11-1.png
-│           ├── unnamed-chunk-12-1.png
-│           ├── unnamed-chunk-14-1.png
-│           ├── unnamed-chunk-18-1.png
-│           ├── unnamed-chunk-19-1.png
-│           ├── unnamed-chunk-21-1.png
-│           ├── unnamed-chunk-22-1.png
-│           └── unnamed-chunk-9-1.png
-├── project.Rmd
-├── README.md
 └── TLSvsiTree
-    └── tlsitree.csv
+    └── tlsitree.csv            ## data comparing tls and itree
+├── branchorder
+│   └── combined_tree_data.csv  ## data for branch vs mainstem 
+├── project.Rmd                 ## readme
+├── README.md
+├── FinalProject.Rproj  
+
+```
 
 ## Running the Project
 
 1. Open `FinalProject.Rproj` in RStudio.
 2. Knit `project.rmd` to produce results in HTML.
+3. [Click here](GFM/project.md) to view github flavored markdown
 
 All required packages will be automatically installed if missing.
