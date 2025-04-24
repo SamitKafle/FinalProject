@@ -57,15 +57,15 @@ clean_data <- data %>%
 summary_stats <- clean_data %>%
   group_by(species) %>%
   summarise(
-    mean_tls = mean(carbon_tls),
-    sd_tls = sd(carbon_tls),
-    mean_itree = mean(carbon_itree),
-    sd_itree = sd(carbon_itree),
-    mean_diff = mean(difference),
-    rmse = sqrt(mean(difference^2)),
-    ccc = CCC(carbon_tls, carbon_itree)$rho.c,
-    pearson_r = cor(carbon_tls, carbon_itree, method = "pearson"),
-    pearson_p_value = cor.test(carbon_tls, carbon_itree, method = "pearson")$p.value
+    mean_tls = mean(carbon_tls), # mean of carbon estimates from tls
+    sd_tls = sd(carbon_tls), # standard deviation of carbon estimates from tls
+    mean_itree = mean(carbon_itree), # mean of carbon estimates from itree
+    sd_itree = sd(carbon_itree),# standard deviation of carbon estimates from iTree
+    mean_diff = mean(difference), # mean difference between methods
+    rmse = sqrt(mean(difference^2)), # root mean square error
+    ccc = CCC(carbon_tls, carbon_itree)$rho.c, # concordance correlation coefficient
+    pearson_r = cor(carbon_tls, carbon_itree, method = "pearson"), # pearson correlation coefficient
+    pearson_p_value = cor.test(carbon_tls, carbon_itree, method = "pearson")$p.value # pearson p value
   )
 ##Summary statistics of all species combined
 summary_stats_combined <- clean_data %>%
@@ -269,8 +269,8 @@ branches_only <- data2 %>% filter(branch_order != 0)
 carbon_summary <- data2 %>%
   group_by(TreeID) %>%
   summarize(
-    main_stem_carbon = sum(carbon[branch_order == 0], na.rm = TRUE),
-    branch_carbon = sum(carbon[branch_order != 0], na.rm = TRUE)
+    main_stem_carbon = sum(carbon[branch_order == 0], na.rm = TRUE), # sum of mainstem carbon
+    branch_carbon = sum(carbon[branch_order != 0], na.rm = TRUE)# sum of branch carbon
   )
 ```
 
